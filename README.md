@@ -1,7 +1,7 @@
 # orbyen-web
 Página web da Orbyen.
 
-Site estático de uma página, com escritório virtual no Espinheiro, plano anual, serviços incluídos e contato pelo botão “CONTRATE AGORA”.
+Site estático de uma página, com escritório virtual no Espinheiro, plano anual, serviços incluídos e contato pelo botão “QUERO MAIS INFORMAÇÕES”.
 
 ## Arquivos
 
