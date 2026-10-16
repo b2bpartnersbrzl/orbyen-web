@@ -1,0 +1,14 @@
+# Arquivos locais de sistema e edição
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.vscode/
+.idea/
+.codex/
+
+# Credenciais e dependências locais, caso sejam usadas no futuro
+.env
+.env.*
+!.env.example
+node_modules/
