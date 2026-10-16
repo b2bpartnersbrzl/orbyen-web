@@ -7,7 +7,7 @@ Site estático de uma página, com escritório virtual no Espinheiro, plano anua
 
 - `index.html`: conteúdo da página.
 - `styles.css` e `fundos.css`: estilos e adaptação para computador e celular.
-- `app.js`: código de interface preservado da versão aprovada.
+- `app.js`: interface e medição de visitas e cliques no WhatsApp.
 - `assets/`: fotografia utilizada, logo, original da logo e ícone do site.
 
 Não há instalação de dependências ou variáveis de ambiente. Os arquivos-fonte ficam na raiz do repositório. No Cloudflare Pages, o comando abaixo reúne somente os arquivos públicos em `dist`, sem publicar este README ou os metadados do repositório:
@@ -19,6 +19,18 @@ mkdir -p dist && cp index.html styles.css fundos.css app.js dist/ && cp -R asset
 Diretório de saída: `dist`. Framework: nenhum. Ramificação de produção: `main`.
 
 ## Estado da entrega
+
+### Medição da Meta autorizada para publicação em 16/10/2026
+
+- Pixel: **Orbyen | Site e WhatsApp**, ID `1666659325046140`.
+- Proprietário: Orbyen BR, ID `1520830406398584`.
+- Conta de anúncios vinculada: Orbyen BR — Anúncios, ID `1743254010209423`.
+- Por solicitação expressa do proprietário, carrega o Pixel automaticamente, sem banner ou controle de consentimento no site, seguindo o comportamento técnico adotado na DL. Isto não representa uma conclusão de conformidade legal; a política de privacidade e a base legal da medição permanecem pendentes de definição.
+- Envia `PageView` na abertura e `Contact` no clique em “QUERO MAIS INFORMAÇÕES” para `https://wa.me/5581992944641`. Os parâmetros adicionais não contêm mensagens, telefone do visitante ou dados de formulário. O SDK da Meta recebe dados técnicos da visita. Não configura API de Conversões ou correspondência avançada.
+- `Contact` representa clique, não conversa, lead qualificado ou venda. Repetições são limitadas a um evento por carregamento, não por pessoa. A atribuição ao anúncio depende da Meta e das condições do navegador.
+- O SDK só carrega em `orbyen.com.br` e `www.orbyen.com.br`. Prévia local e `pages.dev` não enviam eventos. O WhatsApp continua disponível se a Meta falhar ou for bloqueada.
+- Testes locais sem transmissão: `node --test tests/measurement.test.cjs`.
+- Publicação autorizada neste chat. Confirmar produção e recebimento dos eventos após envio. Identificar todo clique técnico como teste, nunca como lead real.
 
 A versão foi preparada localmente em 15 de outubro de 2026. O aviso de prévia e a marcação HTML `noindex,nofollow` foram retirados desta cópia. As condições comerciais e o visual aprovado foram preservados.
 
