@@ -1,0 +1,126 @@
+.contact-section {
+  scroll-margin-top:var(--mast-h);
+  min-height:calc(100svh - var(--mast-h));
+  display:grid;
+  align-items:center;
+  padding-block:clamp(30px,5vw,80px);
+  background-color:#ece6d9;
+  background-image:linear-gradient(90deg,#f4efe6f2 3%,#f4efe6ca 37%,#eee7da55 74%),var(--documents);
+  background-size:cover;
+  background-position:center;
+}
+.contact-layout {
+  display:grid;
+  grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);
+  align-items:center;
+  gap:clamp(28px,5vw,88px);
+}
+.contact-intro h2 {
+  max-width:11ch;
+  font-family:"Archivo Black","Arial Black",Arial,sans-serif;
+  font-size:clamp(36px,5.4vw,79px);
+  font-weight:400;
+  line-height:1.02;
+  letter-spacing:-.065em;
+  text-wrap:balance;
+}
+.contact-intro p {
+  max-width:31ch;
+  margin-top:18px;
+  font-size:clamp(17px,1.5vw,22px);
+  line-height:1.45;
+}
+.contact-form {
+  --fold:clamp(18px,2.1vw,32px);
+  position:relative;
+  isolation:isolate;
+  padding:clamp(24px,3.1vw,46px);
+  filter:drop-shadow(0 9px 9px #30241426) drop-shadow(0 1px 1px #30241422);
+}
+.contact-form::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0;
+  background:linear-gradient(#fffcf5cf,#fffcf5cf),var(--paper-grain);
+  clip-path:polygon(0 0,calc(100% - var(--fold)) 0,100% var(--fold),100% 100%,0 100%);
+}
+.contact-form::after {
+  content:"";
+  position:absolute;
+  inset:0 0 auto auto;
+  width:var(--fold);
+  aspect-ratio:1;
+  background:linear-gradient(42deg,#e3d8c1,#f6eddd);
+  clip-path:polygon(0 0,100% 100%,0 100%);
+  pointer-events:none;
+}
+.form-fields {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px 18px;
+  align-items:start;
+}
+.field { display:grid; gap:6px; min-width:0; }
+.field label { font-size:15px; font-weight:700; }
+.field input,.field select {
+  width:100%;
+  min-width:0;
+  min-height:48px;
+  padding:8px 11px;
+  border:1px solid #858075;
+  border-radius:2px;
+  background:#fffef9;
+  color:var(--ink);
+  font:inherit;
+}
+.field select { cursor:pointer; }
+.field select:invalid { color:#53585a; }
+.field select option { color:var(--ink); }
+.field small,.form-note { font-size:13px; line-height:1.4; color:#4b565b; }
+.form-privacy {
+  margin-top:21px;
+  padding:14px 15px;
+  background:#eae3d58a;
+  line-height:1.45;
+  font-size:14px;
+}
+.form-privacy a,.privacy-page a { color:var(--navy); text-underline-offset:3px; }
+.form-privacy a { font-weight:650; }
+.form-consent { display:flex; align-items:flex-start; gap:11px; margin-top:11px; cursor:pointer; }
+.form-consent input { flex:none; margin:1px 0 0; width:20px; height:20px; accent-color:var(--navy); }
+.form-actions { display:flex; flex-wrap:wrap; align-items:center; gap:9px 15px; margin-top:17px; }
+.contact-form .contact {
+  cursor:pointer;
+  border:0;
+  margin:0;
+  font-family:inherit;
+  min-height:46px;
+}
+.contact-form .contact:disabled { opacity:.65; cursor:default; }
+.contact-form .contact:hover:not(:disabled) { background:#ffa415; }
+.contact-form :is(input,select,button):focus-visible { outline:2px solid #a95800; outline-offset:3px; }
+.form-note { flex:1 1 180px; }
+.form-note:empty { display:none; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+.mast .privacy-mast { min-height:var(--mast-brand-h); padding-block-end:0; }
+.privacy-page { max-width:760px; padding-block:clamp(28px,5vw,72px); font-size:16px; line-height:1.55; }
+.privacy-page h1 { font-size:clamp(30px,5vw,52px); }
+.privacy-page h2 { max-width:none; margin-top:26px; font-size:clamp(22px,3vw,29px); line-height:1.2; }
+.privacy-page p { margin-block:8px 14px; }
+.privacy-page .privacy-status { margin-top:18px; }
+@media(max-width:800px) {
+  .contact-section {
+    background-image:linear-gradient(#f4efe6ea 0,#f4efe65c 59%,#eee7da88),var(--documents);
+    background-position:72% top;
+  }
+  .contact-layout { grid-template-columns:1fr; gap:22px; }
+  .contact-intro p { margin-top:9px; }
+}
+@media(max-width:580px) {
+  .contact-section { padding-block:26px 34px; }
+  .contact-form { padding:22px clamp(13px,4.5vw,24px); }
+  .form-fields { grid-template-columns:1fr; gap:13px; }
+  .form-privacy { padding:12px; }
+  .form-actions .contact { width:100%; }
+}
