@@ -21,7 +21,6 @@
   const mobile = matchMedia('(max-width:800px), (max-width:980px) and (pointer:coarse)');
   const preview = new URLSearchParams(location.search).get('vista');
   const croppedPreview = preview === 'recorte';
-  const paperSkyPreview = preview === 'ceu-de-papel';
   const menuIsOpen = () => menuToggle.getAttribute('aria-expanded') === 'true';
   function setMenu(open, restoreFocus = false) {
     menuToggle.setAttribute('aria-expanded', String(open));
@@ -103,7 +102,7 @@
   function measure() {
     dedicatedOpening = mobile.matches && !croppedPreview;
     document.documentElement.classList.toggle('mobile-dedicated', dedicatedOpening);
-    const desktopPaper = paperSkyPreview && !mobile.matches;
+    const desktopPaper = !mobile.matches;
     document.documentElement.classList.toggle('desktop-paper-sky', desktopPaper);
     const mastHeight = mast.offsetHeight;
     viewport = lens.clientWidth;
