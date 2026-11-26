@@ -110,7 +110,7 @@
     const sizes = [
       ['--service-copy-h', Math.max(...spreads.map(spread => spread.offsetHeight))],
       ['--intro-h', sky.offsetHeight],
-      ['--opening-max', wide ? viewport * height / (width * .885) : null]
+      ['--opening-max', desktopPaper ? viewport * height / width : (wide ? viewport * height / (width * .885) : null)]
     ];
     for (const [property, height] of sizes) {
       if (height === null) tour.style.removeProperty(property);
@@ -135,7 +135,7 @@
     if (desktopPaper) {
       // Share the same paper image from the headline to the skyline.
       const skyDepth = 184;
-      const topTrim = clamp(sky.offsetHeight * .34,42,74);
+      const topTrim = sky.offsetHeight * .34;
       const introInWorld = (sky.offsetHeight + topTrim) / opening[2];
       const artHeight = introInWorld + skyDepth;
       sky.style.setProperty('--paper-sky-top', -topTrim + 'px');

@@ -625,3 +625,41 @@ footer { padding-block:7px; font-size:14px; line-height:1.35; }
 }
 
 @media(prefers-reduced-motion:no-preference) { html { scroll-behavior:smooth; } }
+/* Desktop: headline, plane and skyline share the same full-bleed artwork width.
+   Preserve the image proportions; short screens can reveal the rest by scrolling. */
+.desktop-paper-sky .tour {
+  --hero-h:var(--opening-max,33.333vw);
+}
+.desktop-paper-sky .intro-surface { container-type:inline-size; }
+.desktop-paper-sky .intro {
+  display:block;
+  width:100%;
+  height:15.5cqw;
+  margin:0;
+  padding:0;
+}
+.desktop-paper-sky .intro p {
+  position:absolute;
+  top:3.95cqw;
+  left:7.5cqw;
+  width:32cqw;
+  max-width:none;
+  font-size:1.15cqw;
+  line-height:1.48;
+}
+.desktop-paper-sky .intro h1 {
+  position:absolute;
+  top:1cqw;
+  left:39.8cqw;
+  right:8.6cqw;
+  font-size:3.35cqw;
+  line-height:1.14;
+  text-wrap:nowrap;
+}
+html.desktop-paper-sky[lang="en"] .intro h1 { left:34.8cqw; right:14cqw; font-size:2.82cqw; }
+html.desktop-paper-sky[lang="es"] .intro h1 { left:36.8cqw; right:11.6cqw; }
+.desktop-paper-sky .cargo-plane {
+  left:30cqw;
+  bottom:1.05cqw;
+  width:17.5cqw;
+}
