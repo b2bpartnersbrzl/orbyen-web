@@ -3,7 +3,7 @@ const services = Object.freeze({
   'assessoria-regulatoria': 'Assessoria regulatória',
   'venda-de-cnpjs': 'Venda de CNPJs com licenças sanitárias'
 });
-const policy = 'Contato Orbyen • 2026-11-24';
+const policy = 'Contato Orbyen • 2026-11-26';
 const encoder = new TextEncoder();
 const brasiliaDateTime = new Intl.DateTimeFormat('sv-SE', {
   timeZone:'America/Sao_Paulo', dateStyle:'short', timeStyle:'medium', hourCycle:'h23'
